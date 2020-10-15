@@ -3,7 +3,9 @@ package be.technifutur.java2020.sudoku.sudoku4x4;
 public class Sudoku4x4Vue {
 
     private Sudoku4x4Model model;
-    private String grille = "" +
+    private User user = new ConsoleUser();
+
+    private static String grille = "" +
             "+-----+-----+\n" +
             "| . . | . . |\n" +
             "| . . | . . |\n" +
@@ -11,19 +13,30 @@ public class Sudoku4x4Vue {
             "| . . | . . |\n" +
             "| . . | . . |\n" +
             "+-----+-----+\n";
-    public Sudoku4x4Vue(){
+
+    static {
         grille = grille.replace(".", "%s");
     }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
 
     public void setModel(Sudoku4x4Model a_model){
         this.model = a_model;
     }
 
     public void afficheGrilleVide(){
-        System.out.println(grille);
+        internalAfficheGrille(new Sudoku4x4Model());
     }
 
     public void afficheGrille(){
+        internalAfficheGrille(this.model);
+    }
+
+    private void internalAfficheGrille(Sudoku4x4Model model){
 
         Character[] tabValue = new Character[4*4];
 
@@ -52,5 +65,10 @@ public class Sudoku4x4Vue {
         vue.afficheGrilleVide();
 
         vue.afficheGrille();
+    }
+
+    public String saisirNewValue() {
+        System.out.print(" valeur ( ligne.colonne.valeur) : ");
+        return user.getString();
     }
 }

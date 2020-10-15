@@ -27,14 +27,16 @@ public class Sudoku4x4Controler {
         Pattern pattern = Pattern.compile("([1-4])\\.([1-4])\\.([1-4])");
         vue.afficheGrille();
         String input = vue.saisirNewValue();
-        while( !input.equalsIgnoreCase("q")){
+        while( !"q".equalsIgnoreCase(input)){
             Matcher matcher = pattern.matcher(input);
             if(matcher.matches()){
-                int line = Integer.parseUnsignedInt(matcher.group(1));
-                int col = Integer.parseUnsignedInt(matcher.group(2));
+                int line = Integer.parseUnsignedInt(matcher.group(1))-1;
+                int col = Integer.parseUnsignedInt(matcher.group(2))-1;
                 char val = matcher.group(3).charAt(0);
                 model.setValue(val,line,col);
             }
+            vue.afficheGrille();
+            input = vue.saisirNewValue();
         }
     }
 

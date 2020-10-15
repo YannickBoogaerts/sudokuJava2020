@@ -43,11 +43,10 @@ public class Sudoku4x4Vue {
         for(int lig = 0; lig <4 ; lig++){
             for(int col = 0; col < 4 ; col++){
 
-                char value = model.getValue(lig, col);
-                if(value == 0){
+                if(model.isEmpty(lig, col)){
                     tabValue[lig * 4 + col]= '.';
                 }else{
-                    tabValue[lig * 4 + col]= value;
+                    tabValue[lig * 4 + col]= model.getValue(lig, col);
                 }
             }
         }

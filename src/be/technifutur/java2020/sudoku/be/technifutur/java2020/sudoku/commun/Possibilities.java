@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class Possibilities {
 
-    private int data; // 0b111111111
+    private int data;
 
     public Possibilities(Set<Integer> initialValues){
         for (int val : initialValues) {
@@ -13,10 +13,7 @@ public class Possibilities {
     }
 
     public Possibilities(int max){
-        ///for (int i = 1; i<=  max ; i++) {
-            //add(i);
             data = (1 << max) -1;
-        //}
     }
 
     public boolean contains( int value){

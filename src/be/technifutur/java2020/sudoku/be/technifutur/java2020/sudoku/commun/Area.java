@@ -7,11 +7,12 @@ import java.util.Set;
 public class Area {
 
     private Possibilities possibilities;
+
     private AreaType type;
     private Set<Position> positionSet;
 
     public Area(int size, AreaType type, Position first) {
-        possibilities = new Possibilities(size);
+        this.possibilities = new Possibilities(size);
         this.type = type;
         this.positionSet = new LinkedHashSet<>();
         switch (type) {
@@ -27,11 +28,8 @@ public class Area {
         }
     }
 
-    public static void main(String[] args) {
-        Area area = new Area(9, AreaType.SQUARE, new Position(3, 3));
-        for (Position p : area.getPositionSet()) {
-            System.out.println(p.toString());
-        }
+    public AreaType getType() {
+        return type;
     }
 
     private void initSquare(Position first, int size) {

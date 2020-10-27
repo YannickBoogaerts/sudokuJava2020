@@ -22,4 +22,9 @@ public class Sudoku4x4Model extends AbstractSudokuModel {
         return valid;
     }
 
+    @Override
+    public int getNbCase() {
+        return 4*4;
+    }
+
 }

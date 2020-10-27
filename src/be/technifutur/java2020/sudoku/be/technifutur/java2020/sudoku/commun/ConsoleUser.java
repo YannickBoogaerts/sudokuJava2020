@@ -1,4 +1,4 @@
-package be.technifutur.java2020.sudoku.sudoku4x4;
+package be.technifutur.java2020.sudoku.be.technifutur.java2020.sudoku.commun;
 
 import java.util.Scanner;
 

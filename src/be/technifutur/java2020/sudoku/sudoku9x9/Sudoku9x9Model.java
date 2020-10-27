@@ -21,4 +21,9 @@ public class Sudoku9x9Model extends AbstractSudokuModel {
         }
         return valid;
     }
+
+    @Override
+    public int getNbCase() {
+        return 9*9;
+    }
 }

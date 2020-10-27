@@ -45,4 +45,14 @@ public abstract class AbstractSudokuModel {
         }
         return empty;
     }
+
+    public abstract int getNbCase();
+
+    public int getMaxLine() {
+       return this.grille.length;
+    }
+
+    public int getMaxColumn() {
+        return this.grille[0].length;
+    }
 }

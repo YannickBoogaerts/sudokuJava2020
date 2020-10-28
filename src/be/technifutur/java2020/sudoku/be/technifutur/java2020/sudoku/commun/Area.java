@@ -1,6 +1,7 @@
 package be.technifutur.java2020.sudoku.be.technifutur.java2020.sudoku.commun;
 
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -65,6 +66,22 @@ public class Area {
     }
 
     public Set<Position> getPositionSet() {
-        return positionSet;
+        return Collections.unmodifiableSet(positionSet);
+    }
+
+    public boolean contains(int value) {
+        return possibilities.contains(value);
+    }
+
+    public boolean add(int value) {
+        return possibilities.add(value);
+    }
+
+    public boolean remove(int value) {
+        return possibilities.remove(value);
+    }
+
+    public int size() {
+        return possibilities.size();
     }
 }
